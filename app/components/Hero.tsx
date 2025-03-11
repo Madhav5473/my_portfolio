@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import Image from "next/image"
 
 const titles = [
   "AI Enthusiast",
@@ -33,7 +34,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
           >
-            Hi, I'm Satya Venkata Madhav Muntha
+            Hi, I&apos;m Satya Venkata Madhav Muntha
           </motion.h1>
           <AnimatePresence mode="wait">
             <motion.h2
@@ -113,11 +114,14 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="md:w-1/2"
         >
-          {/* Replace this with your actual profile photo */}
-          <img
-            src="/Images/profile_ai.webp?height=400&width=400"
+          {/* Replace with Next.js Image component */}
+          <Image
+            src="/Images/profile_ai.webp"
             alt="Madhav Muntha"
+            width={400}
+            height={400}
             className="w-full h-auto rounded-lg shadow-lg"
+            priority
           />
         </motion.div>
       </div>
